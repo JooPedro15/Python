@@ -1,4 +1,3 @@
-
 class MyColors:
     RED = "\033[91m"
     GREEN = "\033[92m"
@@ -7,9 +6,12 @@ class MyColors:
     END = "\033[0m"
 
 
+formulas = {"Triangle Area": 1,
+            "Square Area": 2}
+
+
 def calculator():
     while True:
-        print()
         print("Available formulas:")
         for keys, values in formulas.items():
             print(values, keys)
@@ -40,10 +42,6 @@ def selector(selection):
         area_square()
     else:
         print("Not an available formula.")
-
-
-formulas = {"Triangle Area": 1,
-            "Square Area": 2}
 
 
 def area_triangle():
@@ -78,3 +76,6 @@ def area_square():
         a = s * s
         print("Area = {:.2f}cm2".format(a))
         return a
+
+
+calculator()
