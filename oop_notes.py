@@ -6,6 +6,7 @@ Inheritance
 Polymorphism
 """
 
+
 # EXAMPLE 1
 class PlayerCharacter:
     """
@@ -60,6 +61,13 @@ class Archer(User):
         print(f'attacking with arrows: arrows left - {self.num_arrows}')
 
 
+# multiple inheritance
+class HybridBoar(Wizard, Archer):
+    def __init__(self, name, power, num_arrows):
+        Wizard.__init__(self, name, power)
+        Archer.__init__(self, name, num_arrows)
+
+
 wizard1 = Wizard('Manuel', 100000000)
 wizard1.sign_in()
 wizard1.attack()
@@ -67,3 +75,8 @@ wizard1.attack()
 archer1 = Archer('Chico', 10)
 archer1.sign_in()
 archer1.attack()
+
+hb1 = HybridBoar('jon', 10000, 5)
+print(hb1.run())
+print(hb1.check_arrows())
+print(hb1.attack())
